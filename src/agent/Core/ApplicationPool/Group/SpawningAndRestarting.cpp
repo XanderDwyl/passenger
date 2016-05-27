@@ -160,6 +160,12 @@ Group::spawnThreadRealMain(const SpawningKit::SpawnerPtr &spawner,
 				}
 				P_DEBUG("New process count = " << enabledCount <<
 					", remaining get waiters = " << getWaitlist.size());
+
+				pool->getUnionStationContext()->sendEvent(
+					getName(),
+					options.unionStationKey,
+					process->spawnEventJSON()
+				);
 			} else {
 				done = true;
 				P_DEBUG("Unable to attach spawned process " << process->inspect());

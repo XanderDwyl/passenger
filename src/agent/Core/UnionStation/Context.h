@@ -274,6 +274,12 @@ public:
 		}
 	}
 
+	void sendEvent(const string &groupName, const string &unionStationKey, Json::Value event) {
+		TransactionPtr tx = newTransaction(groupName, "events", unionStationKey);
+		string message = stringifyJson(event);
+		tx->message(StaticString(message.data(), message.size()));
+	}
+
 	bool sendRequest(const ConnectionPtr &connection, StaticString argsSend[],
 			unsigned int nrArgsSend)
 	{
