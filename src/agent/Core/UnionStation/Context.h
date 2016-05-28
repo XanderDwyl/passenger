@@ -41,6 +41,7 @@
 #include <Exceptions.h>
 #include <StaticString.h>
 #include <Utils.h>
+#include <Utils/JsonUtils.h>
 #include <Utils/MessageIO.h>
 #include <Utils/SystemTime.h>
 #include <Core/UnionStation/Connection.h>
