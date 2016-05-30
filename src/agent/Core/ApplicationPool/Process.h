@@ -824,14 +824,14 @@ public:
 		Json::Value json;
 		json["event_type"] = "passenger_process_spawned";
 		StaticString gupid = getGupid();
-		json["gupid"] = string(gupid.data(), gupid.size());
+		json["gupid"] = std::string(gupid.data(), gupid.size());
 		json["pid"] = getPid();
 		json["sticky_session_id"] = getStickySessionId();
 		json["spawner_creation_time"] = spawnerCreationTime;
 		json["spawn_start_time"] = spawnStartTime;
 		json["spawn_end_time"] = spawnEndTime;
 		if (!codeRevision.empty()) {
-			json["code_revision"] = string(codeRevision.data(), codeRevision.size());
+			json["code_revision"] = std::string(codeRevision.data(), codeRevision.size());
 		}
 		return json;
 	}

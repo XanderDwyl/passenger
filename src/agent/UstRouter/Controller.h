@@ -876,6 +876,7 @@ private:
 			|| category == P_STATIC_STRING("processes")
 			|| category == P_STATIC_STRING("exceptions")
 			|| category == P_STATIC_STRING("system_metrics")
+			|| category == P_STATIC_STRING("events")
 			|| category == P_STATIC_STRING("internal_information");
 	}
 
